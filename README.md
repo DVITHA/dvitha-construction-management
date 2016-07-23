@@ -13,6 +13,20 @@ http://project-open.com/en/install-rhel-7
 
 And copy them to the folder /usr/src/
 
+While the PostgreSQL installation do not execute the following if the sample data is not required:
+su - projop
+And if required, for the below command first change the directory to /wep/projop/modules
+psql -f projop.sql > import.log 2>&1
+
+su - projop
+# psql -c "select count(*) from users"
+
+Before the firewall setup, assign password for the user projop, follow the below commands:
+su - 
+<enter the root password>
+passwd projop
+projop
+
 Then follow all the instructions given in the project website till the Start Project Manually section.
 
 When you open the page: http://localhost:8000/ . It should open and the user should be able to login with default credentials. 
